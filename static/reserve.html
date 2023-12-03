@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WISH | Your Train Ticket Assistant</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/reserve.js"></script>
+        <style>
+          .premium_seat{
+                fill: orange;
+                stroke: black;
+                stroke-width: 3px;
+                cursor: pointer;
+          }
+            .seat{
+                fill:rgb(47, 213, 22);
+                stroke: black;
+                stroke-width: 3px;
+                cursor: pointer;
+            }
+            .premiumSeatInfo{
+                fill: orange;
+                stroke: black;
+                stroke-width: 3px;
+                cursor: pointer;
+          }
+            .seatInfo{
+                fill:rgb(47, 213, 22);
+                stroke: black;
+                stroke-width: 3px;
+                cursor: pointer;
+            }
+            .selected{
+                fill:rgb(22, 213, 203);
+                stroke: black;
+                stroke-width: 3px;
+                cursor: pointer;
+            }
+            .booked{
+                fill: red;
+                stroke: black;
+                stroke-width: 3px;
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center my-4">Train Seat Reservation</h1>
+            <div class="row">
+              <div class="col-md-6 pt-5">
+                <svg class="seat-map" width="100%" height="250">
+                    <g transform="translate(0, 90)">
+                        <text x="20" y="20">1</text>
+                        <text x="60" y="20">2</text>
+                        <text x="100" y="20">3</text>
+                        <text x="140" y="20">4</text>
+                        <text x="180" y="20">5</text>
+                        <text x="220" y="20">6</text>
+                        <text x="260" y="20">7</text>
+                        <text x="300" y="20">8</text>
+                        <text x="340" y="20">9</text>
+                        <text x="380" y="20">10</text>
+                        <text x="420" y="20">11</text>
+                        <text x="460" y="20">12</text>
+                    </g>  
+
+                    <g transform="translate(470, 0)"> 
+                        <text x="30" y="30">A</text>
+                        <text x="30" y="70">B</text>
+                        <text x="30" y="150">C</text>
+                        <text x="30" y="190">D</text>
+                        <!-- Add more letters for rows -->
+                    </g>
+                    
+                    <!-- Row 1 -->
+                    <g class="seat-row" transform="translate(10, 10)">
+                        <rect class="premium_seat" x="0" y="0"  width="30" height="30" id="A1" />
+                        <rect class="premium_seat" x="40" y="0" width="30" height="30" id="A2" />
+                        <rect class="premium_seat" x="80" y="0" width="30" height="30" id="A3"/>
+                        <rect class="premium_seat" x="120" y="0" width="30" height="30" id="A4"/>
+                        <rect class="seat" x="160" y="0" width="30" height="30" id="A5"/>
+                        <rect class="seat" x="200" y="0" width="30" height="30" id="A6"/>
+                        <rect class="seat" x="240" y="0" width="30" height="30" id="A7"/>
+                        <rect class="seat" x="280" y="0" width="30" height="30" id="A8"/>
+                        <rect class="seat" x="320" y="0" width="30" height="30" id="A9"/>
+                        <rect class="seat" x="360" y="0" width="30" height="30" id="A10"/>
+                        <rect class="seat" x="400" y="0" width="30" height="30" id="A11"/>
+                        <rect class="seat" x="440" y="0" width="30" height="30" id="A12" />
+                    </g>
+
+                    <!-- Row 2 -->
+                    <g class="seat-row" transform="translate(10, 50)">
+                        <rect class="premium_seat" x="0" y="0" width="30" height="30" id="B1"/>
+                        <rect class="premium_seat" x="40" y="0" width="30" height="30" id="B2"/>
+                        <rect class="premium_seat" x="80" y="0" width="30" height="30" id="B3"/>
+                        <rect class="premium_seat" x="120" y="0" width="30" height="30" id="B4"/>
+                        <rect class="seat" x="160" y="0" width="30" height="30" id="B5"/>
+                        <rect class="seat" x="200" y="0" width="30" height="30" id="B6"/>
+                        <rect class="seat" x="240" y="0" width="30" height="30" id="B7"/>
+                        <rect class="seat" x="280" y="0" width="30" height="30" id="B8"/>
+                        <rect class="seat" x="320" y="0" width="30" height="30" id="B9"/>
+                        <rect class="seat" x="360" y="0" width="30" height="30" id="B10"/>
+                        <rect class="seat" x="400" y="0" width="30" height="30" id="B11"/>
+                        <rect class="seat" x="440" y="0" width="30" height="30" id="B12"/>
+                    </g>
+                    <!-- Row 3 -->
+                    <g class="seat-row" transform="translate(10, 130)">
+                        <rect class="premium_seat" x="0" y="0" width="30" height="30" id="C1" />
+                        <rect class="premium_seat" x="40" y="0" width="30" height="30" id="C2"/>
+                        <rect class="premium_seat" x="80" y="0" width="30" height="30" id="C3"/>
+                        <rect class="premium_seat" x="120" y="0" width="30" height="30" id="C4"/>
+                        <rect class="seat" x="160" y="0" width="30" height="30" id="C5"/>
+                        <rect class="seat" x="200" y="0" width="30" height="30" id="C6"/>
+                        <rect class="seat" x="240" y="0" width="30" height="30" id="C7"/>
+                        <rect class="seat" x="280" y="0" width="30" height="30" id="C8"/>
+                        <rect class="seat" x="320" y="0" width="30" height="30" id="C9"/>
+                        <rect class="seat" x="360" y="0" width="30" height="30" id="C10"/>
+                        <rect class="seat" x="400" y="0" width="30" height="30" id="C11"/>
+                        <rect class="seat" x="440" y="0" width="30" height="30" id="C12"/>
+                    </g>
+
+                    <!--Row 4-->
+                    <g class="seat-row" transform="translate(10, 170)">
+                        <rect class="premium_seat" x="0" y="0" width="30" height="30" id="D1"/>
+                        <rect class="premium_seat" x="40" y="0" width="30" height="30" id="D2"/>
+                        <rect class="premium_seat" x="80" y="0" width="30" height="30" id="D3"/>
+                        <rect class="premium_seat" x="120" y="0" width="30" height="30" id="D4"/>
+                        <rect class="seat" x="160" y="0" width="30" height="30" id="D5"/>
+                        <rect class="seat" x="200" y="0" width="30" height="30" id="D6"/>
+                        <rect class="seat" x="240" y="0" width="30" height="30" id="D7"/>
+                        <rect class="seat" x="280" y="0" width="30" height="30" id="D8"/>
+                        <rect class="seat" x="320" y="0" width="30" height="30" id="D9"/>
+                        <rect class="seat" x="360" y="0" width="30" height="30" id="D10"/>
+                        <rect class="seat" x="400" y="0" width="30" height="30" id="D11"/>
+                        <rect class="seat" x="440" y="0" width="30" height="30" id="D12"/>
+                    </g>
+
+                    <g class="seat-row" transform="translate(10, 210)">
+                      <rect class="premiumSeatInfo" x="0" y="0" width="30" height="30"/>
+                      <text x="35" y="20">Premium Seat $320</text>
+                      <rect class="seatInfo" x="240" y="0" width="30" height="30"/>
+                      <text x="275" y="20">Normal Seat $250</text>
+                    </g>
+                    <!-- Repeat the pattern for more rows -->
+                </svg>
+                <div id="text" class="text-center">Click a seat to book</div>
+              </div>
+              <div class="col-md-6 p-4">
+                <span>Details</span>
+                <div class="SeatDetail pt-3">
+                    <div class="card">
+                        <div class="p-3">
+                            <!-- Departure information -->
+                            <div class="mb-2">
+                                <div id="selectedSeatText" class="mb-2">
+                            <!-- Display selected seats here -->
+                                </div>
+                            </div>
+
+                            <hr class="mt-0 line">
+  
+                            <!-- Number of tickets and price calculation -->
+                            <div class="mb-2">
+                                <span id="selectedPremiumSeats">Premium Seats: 0 ($<span id="premiumSeatPrice">0</span>)</span><br>
+                                <span id="selectedNormalSeats">Normal Seats: 0 ($<span id="normalSeatPrice">0</span>)</span><br>
+                            </div>
+                            <hr class="mt-0 line">
+                            <div class="d-flex justify-content-between">
+                                <span>Total</span>
+                                <span id="totalPrice">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-end mt-3">
+                            <button id="proceedToPaymentBtn" class="btn btn-primary">Proceed to payment</button>
+                            </div>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <footer class="fs-6 py-1 bg-light text-muted text-center fixed-bottom font-weight-light">© EIE4432 Final Project - Train Ticket Selling System</footer>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WISH | Your Train Ticket Assistant</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/241fe1056b.js" crossorigin="anonymous"></script>
+    <script src="js/events.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div>
+                    <i class="ms-3 fa-brands fa-fort-awesome"></i>
+                    <a class="navbar-brand px-2 fw-bold">WISH</a>
+                </div>    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="booking.html">Make a Booking</a>
+                        </li>
+                    </ul>    
+                </div>
+                <div class="py-2 btn-group">
+                    <div class="myAccount">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">My Account</button>
+                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-4 p-4 bg-light">
+          <form class="p-3" action="/auth/trainInfo" method="post" enctype="multipart/form-data" id="bookingForm">
+
+             <div class="row g-3 align-items-center mb-3"> 
+              <div class="col-auto">
+                <label for="trainID" class="col-form-label">ID:</label>
+                <input type="text" id="trainID" class="form-control">
+              </div>
+              <div class="col-auto">
+                
+              </div>
+            </div>  
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <label class="form-label">Departure Date:</label>
+                <input type="date" class="form-control" id="departureDate" />
+              </div>
+              <div class="col-sm-3">
+                <label class="form-label">Departure Time Slot:</label>
+                <select class="form-select" id="departureTime">
+                  <option value="dafault">--Please Select--</option>
+                  <option value="10am">10:00</option>
+                  <option value="11am">11:00</option>
+                  <option value="12nn">12:00</option>
+                  <option value="1pm">13:00</option>
+                  <option value="2pm">14:00</option>
+                  <option value="3pm">15:00</option>
+                  <option value="4pm">16:00</option>
+                  <option value="5pm">17:00</option>
+                  <option value="6pm">18:00</option>
+                  <option value="7pm">19:00</option>
+                  <option value="8pm">20:00</option>
+                  <option value="9pm">21:00</option>
+                  <option value="10pm">22:00</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label class="form-label">From:</label>
+                <select class="form-select form-select" id="departureFrom">
+                  <option value="dafault">--Please Select--</option>
+                  <option value="Adventureland">Adventureland</option>
+                  <option value="Fantasyland">Fantasyland</option>
+                  <option value="Grizzly Gulch">Grizzly Gulch</option>
+                  <option value="Mystic Manor">Mystic Manor</option>
+                  <option value="Main Street">Main Street</option>
+                  <option value="Tomorrowland">Tomorrowland</option>
+                  <option value="Toy Story Land">Toy Story Land</option>
+                  <option value="World of Frozen">World of Frozen</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label class="form-label">To:</label>
+                <select class="form-select form-select" id="departureTo">
+                  <option value="dafault">--Please Select--</option>
+                  <option value="Adventureland">Adventureland</option>
+                  <option value="Fantasyland">Fantasyland</option>
+                  <option value="Grizzly Gulch">Grizzly Gulch</option>
+                  <option value="Mystic Manor">Mystic Manor</option>
+                  <option value="Main Street">Main Street</option>
+                  <option value="Tomorrowland">Tomorrowland</option>
+                  <option value="Toy Story Land">Toy Story Land</option>
+                  <option value="World of Frozen">World of Frozen</option>
+                </select>
+              </div> 
+            <div class="row mt-4">
+              <div class="ms-2 ms-lg-0 d-flex justify-content-end">
+                <button class="btn btn-outline-secondary me-2" type="button" id="confirmButton">Confirm</button>
+                <button class="btn btn-outline-primary" type="reset" id="resetButton">Reset</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="container">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© EIE4432 Train Ticket Selling System</span>
+        </div>
+          <ul class="nav col-md-4 pe-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/hkdlfantasy" target="_blank"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/hkdlfantasy/" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.facebook.com/hkdlfantasy/" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+  </body>
+</html>

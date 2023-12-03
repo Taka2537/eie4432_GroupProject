@@ -1,0 +1,44 @@
+[
+  {
+    "username": "admin",
+    "password": "adminpass",
+    "role": "admin",
+    "enabled": true
+  },
+  {
+    "username": "223344556677",
+    "password": "223344556677",
+    "role": "user",
+    "enabled": true
+  },
+  {
+    "username": "user",
+    "password": "userpass",
+    "role": "user",
+    "enabled": true
+  },
+  {
+    "username": "test",
+    "password": "testpass",
+    "role": "user",
+    "enabled": true
+  },
+  {
+    "username": "adcd",
+    "password": "abcdefghi",
+    "role": "user",
+    "enabled": true
+  },
+  {
+    "username": "user123",
+    "password": "user1234",
+    "role": "user",
+    "enabled": true
+  },
+  {
+    "username": "user234",
+    "password": "user23456",
+    "role": "user",
+    "enabled": true
+  }
+]

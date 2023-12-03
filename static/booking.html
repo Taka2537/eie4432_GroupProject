@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WISH | Your Train Ticket Assistant</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/241fe1056b.js" crossorigin="anonymous"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/events.js"></script>
+    <!-- <script src="js/testing.js"></script> -->
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div>
+        <i class="ms-3 fa-brands fa-fort-awesome"></i>
+        <a class="navbar-brand px-2 fw-bold">WISH</a>
+      </div>    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="booking.html">Make a Booking</a>
+          </li>
+        </ul>    
+      </div>
+      <div class="py-2 btn-group">
+        <div class="myAccount">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">My Account</button>
+            <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#" id="logoutButton">Logout</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+      <div class="mt-4 p-4 bg-light">
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <label class="form-label">Departure Date:</label>
+            <input type="date" class="form-control" id="departureDate" />
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label">Adults:</label>
+            <input type="number" class="form-control form-control-sm" id="numberOfAdults" min="0" max="48" value="1" />
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label">Children:</label>
+            <input type="number" class="form-control form-control-sm" id="numberOfChildren" min="0" max="48" value="0" />
+          </div>
+          <div class="p-4 col-sm-3">
+          <a href="#" class="btn btn-outline-dark me-2" id="selectButton">Select</a>
+          </div>
+        </div>
+        <div class="container p-3">
+          <h5 class="form-label">Train Schedule</h5>
+          <div id="events"></div>
+          <div id="display"></div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary">© EIE4432 Train Ticket Selling System</span>
+        </div>
+        <ul class="nav col-md-4 pe-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/hkdlfantasy" target="_blank"><i class="fa-brands fa-twitter fa-lg"></i></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/hkdlfantasy/" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+          <li class="ms-3"><a class="text-body-secondary" href="https://www.facebook.com/hkdlfantasy/" target="_blank"><i class="fa-brands fa-facebook fa-lg"></i></a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
