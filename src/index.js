@@ -3,6 +3,7 @@ import express from 'express';
 import session from 'express-session';
 import client from './dbclient.js';
 import login from './login.js';
+import path from 'path';
 
 const app = express();
 
@@ -25,8 +26,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', login);
 
-app.use('/', express.static('static'));
-
+app.use('/', express.static(path.join(process.cwd(), '/static')));
 const port = 3000;
 app.listen(port, () => {
   const currentDate = new Date().toLocaleString('en-US', {
